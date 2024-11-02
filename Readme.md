@@ -1,6 +1,6 @@
 ### Clone project by running below command or copy and paste project code
 
-`git clone https://github.com/M-Umais-Hassan/news-agr-backend.git`
+`git clone https://github.com/M-Umais-Hassan/news-aggregator-backend.git`
 
 ### Run below command to start project
 
