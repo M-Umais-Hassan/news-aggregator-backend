@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
+const path = require("path");
 const NewsAPI = require("newsapi");
 require("dotenv").config();
 const newsapi = new NewsAPI(process.env.API_KEY);
@@ -60,7 +61,8 @@ app.post("/newsapi/everything", (req, res) => {
 
 // API key had limit, and this data was kind of not changing that often so I have cache it
 app.post("/newsapi/sources", (req, res) => {
-  var fileData = fs.readFileSync("sources.json", { encoding: "utf-8" });
+  const filePath = path.join(__dirname, "sources.json");
+  var fileData = fs.readFileSync(filePath, { encoding: "utf-8" });
   var data = JSON.parse(fileData);
   res.send({ data: data?.sources, message: "Success", status: 200 });
 });
