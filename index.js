@@ -60,7 +60,7 @@ app.post("/newsapi/everything", (req, res) => {
 });
 
 // API key had limit, and this data was kind of not changing that often so I have cache it
-app.post("/newsapi/sources", (req, res) => {
+app.get("/newsapi/sources", (req, res) => {
   const filePath = path.join(__dirname, "sources.json");
   var fileData = fs.readFileSync(filePath, { encoding: "utf-8" });
   var data = JSON.parse(fileData);
